@@ -137,6 +137,10 @@ uptrend momentum. Positive news sentiment supports bullish outlook.
 Recommendation: HOLD/BUY on dips.
 ```
 
+### Example Output
+
+![Market Analysis Example Output](Example%20Output.png)
+
 ## CSV Log Format
 
 Results are logged to `data/market_analysis.csv`:
