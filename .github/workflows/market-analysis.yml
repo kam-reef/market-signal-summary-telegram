@@ -4,7 +4,7 @@ on:
   workflow_dispatch:
     inputs:
       ticker:
-        description: 'Stock ticker symbol (e.g., AAPL, MSFT)'
+        description: 'Stock ticker symbol(s) - comma-separated for multiple (e.g., AAPL or AAPL,MSFT,GOOGL)'
         required: true
         type: string
       telegram_chat_id:
