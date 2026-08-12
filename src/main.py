@@ -132,9 +132,9 @@ def main():
     logger.info(f"Completed: {successful}/{len(tickers)} successful")
     if failed > 0:
         logger.warning(f"Failed: {failed} ticker(s)")
-        return 1
     
-    return 0
+    # Return 0 if at least one ticker succeeded, 1 only if all failed
+    return 0 if successful > 0 else 1
 
 
 if __name__ == '__main__':

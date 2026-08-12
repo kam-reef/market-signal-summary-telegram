@@ -39,7 +39,7 @@ share/python-wheels/
 .env.*.local
 
 # Data and logs
-data/*.csv
+# Note: data/market_analysis.csv is committed for tracking
 data/*.json
 logs/*.log
 
