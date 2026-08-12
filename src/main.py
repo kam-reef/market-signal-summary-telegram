@@ -7,6 +7,7 @@ Coordinates data fetching, analysis, and reporting.
 import argparse
 import logging
 import sys
+import os
 from datetime import datetime
 
 from ticker_fetcher import TickerFetcher
@@ -19,6 +20,9 @@ from telegram_reporter import TelegramReporter
 
 def setup_logging():
     """Set up logging configuration."""
+    # Ensure logs directory exists
+    os.makedirs('logs', exist_ok=True)
+    
     logging.basicConfig(
         level=logging.INFO,
         format='%(asctime)s - %(name)s - %(levelname)s - %(message)s',
