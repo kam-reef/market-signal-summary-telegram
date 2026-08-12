@@ -1,0 +1,5 @@
+Timestamp,Ticker,Current_Price,Closing_Price,SMA_Weekly,SMA_Monthly,SMA_Quarterly,vs_Weekly_Percent,vs_Monthly_Percent,vs_Quarterly_Percent,News_Count,AI_Commentary,Analysis_Status
+2026-08-12T01:05:45.575189,SCHD,34.27000045776367,34.27000045776367,61.88,64.55,78.24,,,,3,SCHD is consolidating around key moving average levels. | Signal: NEUTRAL | Recommendation: HOLD,Success
+2026-08-12T01:05:46.602683,DGRO,79.69000244140625,79.69000244140625,80.53,80.39,88.08,,,,3,DGRO is consolidating around key moving average levels. | Signal: NEUTRAL | Recommendation: HOLD,Success
+2026-08-12T01:05:47.796691,O,61.89,61.88999938964844,121.06,116.03,111.47,,,,3,O is consolidating around key moving average levels. | Signal: NEUTRAL | Recommendation: HOLD,Success
+2026-08-12T01:05:48.706053,FDGFX,50.56999969482422,50.56999969482422,120.26,118.0,127.95,,,,0,FDGFX is consolidating around key moving average levels. | Signal: NEUTRAL | Recommendation: HOLD,Success
