@@ -27,11 +27,11 @@ class NewsFetcher:
             limit: Maximum number of articles to fetch
         
         Returns:
-            List of news articles
+            List of news articles or an API error message
         """
         if not self.api_key:
-            logger.warning("NEWS_API_KEY not set, returning mock news")
-            return self._generate_mock_news()
+            logger.warning("NEWS_API_KEY not set")
+            return self._error_response("API not working: NEWS_API_KEY not set")
         
         try:
             url = f"{self.base_url}/everything"
@@ -51,7 +51,7 @@ class NewsFetcher:
             
             if data.get('status') != 'ok':
                 logger.warning(f"NewsAPI returned status: {data.get('status')}")
-                return self._generate_mock_news()
+                return self._error_response("API not working")
             
             articles = data.get('articles', [])
             
@@ -69,38 +69,25 @@ class NewsFetcher:
                 if len(filtered_articles) >= limit:
                     break
             
+            if not filtered_articles:
+                return self._error_response("API not working or no articles found")
+            
             logger.info(f"Fetched {len(filtered_articles)} news articles for {self.ticker}")
             return filtered_articles
             
         except requests.exceptions.RequestException as e:
             logger.error(f"Error fetching news: {str(e)}")
-            return self._generate_mock_news()
-    
-    def _generate_mock_news(self) -> List[Dict[str, Any]]:
-        """Generate mock news articles for demonstration."""
-        return [
-            {
-                'title': f'{self.ticker} Shows Strong Performance in Q3',
-                'url': f'https://example.com/news/{self.ticker.lower()}-q3',
-                'source': 'Market News Today',
-                'published_at': '2024-01-15T10:00:00Z',
-                'description': 'The company reported strong earnings and positive outlook.'
-            },
-            {
-                'title': f'Analyst Upgrades {self.ticker} Rating',
-                'url': f'https://example.com/news/{self.ticker.lower()}-upgrade',
-                'source': 'Financial Times',
-                'published_at': '2024-01-14T15:30:00Z',
-                'description': 'Leading analyst upgraded the stock to Buy rating.'
-            },
-            {
-                'title': f'{self.ticker} Launches New Product Line',
-                'url': f'https://example.com/news/{self.ticker.lower()}-product',
-                'source': 'TechNews',
-                'published_at': '2024-01-13T12:00:00Z',
-                'description': 'The company announced an innovative product launch.'
-            }
-        ]
+            return self._error_response("API not working")
+
+    def _error_response(self, message: str) -> List[Dict[str, Any]]:
+        """Return a standardized error structure matching the article schema."""
+        return [{
+            'title': message,
+            'url': '',
+            'source': 'Error',
+            'published_at': '',
+            'description': ''
+        }]
 
 
 if __name__ == '__main__':
@@ -109,4 +96,5 @@ if __name__ == '__main__':
     news = fetcher.fetch(limit=3)
     for article in news:
         print(f"- {article['title']}")
-        print(f"  {article['url']}\n")
+        if article['url']:
+            print(f"  {article['url']}\n")
