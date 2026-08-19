@@ -31,3 +31,8 @@ Timestamp,Ticker,Current_Price,Closing_Price,SMA_Weekly,SMA_Monthly,SMA_Quarterl
 2026-08-18T01:00:31.225448,O,62.4,62.400001525878906,62.51,63.64,62.32,,,,3,O is consolidating around key moving average levels. | Signal: NEUTRAL | Recommendation: HOLD,Success
 2026-08-18T01:00:32.816855,JEPQ,60.560001373291016,60.560001373291016,60.23,58.65,58.76,,,,3,JEPQ is consolidating around key moving average levels. | Signal: NEUTRAL | Recommendation: HOLD,Success
 2026-08-18T01:00:38.365480,^VIX,15.1899995803833,15.1899995803833,14.78,16.56,17.01,,,,1,^VIX is consolidating around key moving average levels. | Signal: NEUTRAL | Recommendation: HOLD,Success
+2026-08-19T01:00:32.561776,SCHD,34.5099983215332,34.5099983215332,34.4,33.76,32.71,,,,3,SCHD is consolidating around key moving average levels. | Signal: NEUTRAL | Recommendation: HOLD,Success
+2026-08-19T01:00:33.687731,DGRO,79.68000030517578,79.68000030517578,79.74,78.76,76.49,,,,3,DGRO is consolidating around key moving average levels. | Signal: NEUTRAL | Recommendation: HOLD,Success
+2026-08-19T01:00:34.891424,O,62.21,62.209999084472656,62.58,63.52,62.34,,,,3,O is consolidating around key moving average levels. | Signal: NEUTRAL | Recommendation: HOLD,Success
+2026-08-19T01:00:35.771364,JEPQ,59.93000030517578,59.93000030517578,60.29,58.75,58.8,,,,3,JEPQ is consolidating around key moving average levels. | Signal: NEUTRAL | Recommendation: HOLD,Success
+2026-08-19T01:00:37.533175,^VIX,15.84000015258789,15.84000015258789,14.89,16.43,16.98,,,,1,^VIX is consolidating around key moving average levels. | Signal: NEUTRAL | Recommendation: HOLD,Success
